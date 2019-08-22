@@ -26,6 +26,7 @@ export default class SwapiService {
 
   async getPlanet(id) {
     const planet = await this.getResource(`/planets/${id}/`);
+    console.log(planet)
     return this._transformPlanet(planet);
   }
 
@@ -41,7 +42,6 @@ export default class SwapiService {
   _transformPlanet(planet) {
     const idRegExp = /\/([0-9]*)\/$/;
     const id = planet.url.match(idRegExp)[1];
-    console.log(id);
     return {
       id,
       name: planet.name,
