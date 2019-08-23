@@ -8,8 +8,14 @@ import PersonDetails from '../person-details';
 import './app.css';
 
 export default class App extends React.Component {
-
+  state = {
+    showRandomPlanet: true,
+    selectedPerson: null
+  }
   onItemSelected = (id) => {
+    this.setState({
+      selectedPerson: id
+    })
     console.log(id)
   }
 
@@ -24,7 +30,7 @@ export default class App extends React.Component {
             <ItemList onItemSelected={this.onItemSelected} />
           </div>
           <div className="col-md-6">
-            <PersonDetails />
+            <PersonDetails personId={this.state.selectedPerson}/>
           </div>
         </div>
       </div>
