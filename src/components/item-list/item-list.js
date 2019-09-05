@@ -19,7 +19,7 @@ export default class ItemList extends Component {
     });
   }
   onClick = () => {
-    console.log('test');
+    // console.log('test');
   }
   render() {
     const { peopleList } = this.state;
